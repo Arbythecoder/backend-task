@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-// const port = 3000;
 const port = process.env.PORT || 3000;
 
 app.get("/api", (req, res) => {
@@ -15,11 +14,12 @@ app.get("/api", (req, res) => {
   // Construct dynamic GitHub URLs based on the file and repository
   const githubUsername = "Arbythecoder"; // GitHub username
   const githubRepo = "backend-task"; // repository name
-  const githubFilePath = "HNGX\backend-task.ext"; //
+  const githubFilePath = "HNGX/backend-task.ext"; // Corrected path
 
-  const githubFileUrl = `https://github.com/Arbythecoder/backend-task/blob/main/\HNGX\backend-task.ext`;
-  const githubRepoUrl = `https://github.com/Arbythecoder/backend-task`;
-
+  const githubFileUrl = `https://github.com/${Arbythecoder}/${
+    backend-task
+  }/blob/main/${HNGX/backend-task.ext}`;
+  const githubRepoUrl = `https://github.com/${Arbythecoder}/${backend-task}`;
   const status_code = 200;
 
   // Construct the JSON response
