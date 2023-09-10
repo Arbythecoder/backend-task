@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+// const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.get("/api", (req, res) => {
   const slackName = req.query.slack_name || "Afolabi Abigeal";
@@ -37,4 +38,10 @@ app.get("/api", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
 });
