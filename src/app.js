@@ -6,7 +6,7 @@ app.get("/api", (req, res) => {
   const slackName = req.query.slack_name || "Afolabi Abigeal";
   const track = req.query.track || "backend";
   const currentDate = new Date();
-  const currentDay = currentDate.toLocaleDateString("en-NG", {
+  const currentDay = currentDate.toLocaleDateString("en-US", {
     weekday: "long",
   });
   const utcTime = currentDate.toISOString();
@@ -16,11 +16,10 @@ app.get("/api", (req, res) => {
   const githubRepo = "backend-task"; // repository name
   const githubFilePath = "HNGX/backend-task.ext"; // Corrected path
 
-  const githubFileUrl = `https://github.com/${Arbythecoder}/${
-    backend-task
-  }/blob/main/${HNGX/backend-task.ext}`;
-  const githubRepoUrl = `https://github.com/${Arbythecoder}/${backend-task}`;
-  const status_code = 200;
+  // Fixed variable names and template literals
+  const githubFileUrl = `https://github.com/${githubUsername}/${githubRepo}/blob/main/${githubFilePath}`;
+  const githubRepoUrl = `https://github.com/${githubUsername}/${githubRepo}`;
+  const statusCode = 200; // Corrected variable name
 
   // Construct the JSON response
   const jsonResponse = {
@@ -30,7 +29,7 @@ app.get("/api", (req, res) => {
     track: track,
     github_file_url: githubFileUrl,
     github_repo_url: githubRepoUrl,
-    status_code: status_code,
+    status_code: statusCode, // Corrected variable name
   };
 
   res.json(jsonResponse);
