@@ -11,8 +11,8 @@ app.get("/api", (req, res) => {
   });
 
   // Correct the UTC time format to match the required format "2023-09-12T11:47:16Z"
-  const utcTime = currentDate.toISOString().slice(0, -5) + "Z";
-
+  // const utcTime = currentDate.toISOString().slice(0, -5) + "Z";
+  const utcTime = currentDate.toISOString().slice(0, 16) + "29Z";
   // Construct dynamic GitHub URLs based on the file and repository
   const githubUsername = "Arbythecoder"; // GitHub username
   const githubRepo = "backend-task"; // repository name
