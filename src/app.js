@@ -9,7 +9,9 @@ app.get("/api", (req, res) => {
   const currentDay = currentDate.toLocaleDateString("en-US", {
     weekday: "long",
   });
-  const utcTime = currentDate.toISOString();
+
+  // Correct the UTC time format to match the required format "2023-09-12T11:47:16Z"
+  const utcTime = currentDate.toISOString().slice(0, -5) + "Z";
 
   // Construct dynamic GitHub URLs based on the file and repository
   const githubUsername = "Arbythecoder"; // GitHub username
